@@ -1,14 +1,539 @@
 {
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    activity =     {
+        metadata =         {
+            activityId = TestUveitis;
+            endDate = "";
+            lastModified = "2019-07-11T04:19:24.000-0700";
+            name = TestUveitis;
+            startDate = "2019-07-11T00:00:00.000-0700";
+            studyId = Arthritis001;
+            version = "1.0";
+        };
+        steps =         (
+                        {
+                destinations =                 (
+                                        {
+                        condition = true;
+                        destination = eyeindication;
+                        operator = "";
+                    },
+                                        {
+                        condition = false;
+                        destination = eyeindication;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = eyeindication;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = Inflammation;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = boolean;
+                skippable = 0;
+                steps =                 (
+                );
+                text = "";
+                title = "At your eye doctor visit today, did your doctor tell you that you have active inflammation (called uveitis or iritis) in your eyes?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = lefteye;
+                        destination = Countinstruct;
+                        operator = "";
+                    },
+                                        {
+                        condition = righteye;
+                        destination = Countinstruct;
+                        operator = "";
+                    },
+                                        {
+                        condition = botheyes;
+                        destination = Countinstruct;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = Countinstruct;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Multiple;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "Left Eye";
+                            value = lefteye;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "Right Eye";
+                            value = righteye;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 1;
+                            text = "Both Eyes";
+                            value = botheyes;
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = eyeindication;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 0;
+                steps =                 (
+                );
+                text = "";
+                title = "In which eye did your doctor say you have active inflammation?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = "";
+                        destination = lefteyecount;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = Countinstruct;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = "";
+                skippable = 0;
+                steps =                 (
+                );
+                text = "In the next questions we\U2019ll ask how many white blood cells are in your eyes.";
+                title = "Cell Count";
+                type = instruction;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = "1-5";
+                        destination = righteye;
+                        operator = "";
+                    },
+                                        {
+                        condition = "6-15";
+                        destination = righteye;
+                        operator = "";
+                    },
+                                        {
+                        condition = "16-25";
+                        destination = righteye;
+                        operator = "";
+                    },
+                                        {
+                        condition = "26-50";
+                        destination = righteye;
+                        operator = "";
+                    },
+                                        {
+                        condition = ">50";
+                        destination = righteye;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = righteye;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "1-5";
+                            value = "1-5";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "6-15";
+                            value = "6-15";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "16-25";
+                            value = "16-25";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "26-50";
+                            value = "26-50";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = ">50";
+                            value = ">50";
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = lefteyecount;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Left Eye";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = "1-5";
+                        destination = medrec;
+                        operator = "";
+                    },
+                                        {
+                        condition = "6-15";
+                        destination = medrec;
+                        operator = "";
+                    },
+                                        {
+                        condition = "16-25";
+                        destination = medrec;
+                        operator = "";
+                    },
+                                        {
+                        condition = "26-50";
+                        destination = medrec;
+                        operator = "";
+                    },
+                                        {
+                        condition = ">50";
+                        destination = medrec;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = medrec;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "1-5";
+                            value = "1-5";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "6-15";
+                            value = "6-15";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "16-25";
+                            value = "16-25";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = "26-50";
+                            value = "26-50";
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = ">50";
+                            value = ">50";
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = righteye;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Right Eye";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = Yes;
+                        destination = visionaffected;
+                        operator = "";
+                    },
+                                        {
+                        condition = No;
+                        destination = visionaffected;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = visionaffected;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = Yes;
+                            value = Yes;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = No;
+                            value = No;
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = medrec;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Does your eye doctor recommend adding a medication because of the inflammation in the eyes?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = Yes;
+                        destination = eyescarring1;
+                        operator = "";
+                    },
+                                        {
+                        condition = No;
+                        destination = eyescarring1;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = eyescarring1;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = Yes;
+                            value = Yes;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = No;
+                            value = No;
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = visionaffected;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Is your vision affected by the inflammation?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = Yes;
+                        destination = visionconcerns;
+                        operator = "";
+                    },
+                                        {
+                        condition = No;
+                        destination = visionconcerns;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = visionconcerns;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = Yes;
+                            value = Yes;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = No;
+                            value = No;
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = eyescarring1;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Did your doctor say that you had eye scarring or signs of inflammation in the past?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = Yes;
+                        destination = eyescarring2;
+                        operator = "";
+                    },
+                                        {
+                        condition = No;
+                        destination = eyescarring2;
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = eyescarring2;
+                        operator = "";
+                    }
+                );
+                format =                 {
+                    selectionStyle = Single;
+                    textChoices =                     (
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = Yes;
+                            value = Yes;
+                        },
+                                                {
+                            detail = "";
+                            exclusive = 0;
+                            text = No;
+                            value = No;
+                        }
+                    );
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = visionconcerns;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = textChoice;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Did your doctor have any concerns about your vision?";
+                type = question;
+            },
+                        {
+                destinations =                 (
+                                        {
+                        condition = true;
+                        destination = "";
+                        operator = "";
+                    },
+                                        {
+                        condition = false;
+                        destination = "";
+                        operator = "";
+                    },
+                                        {
+                        condition = "";
+                        destination = "";
+                        operator = "";
+                    }
+                );
+                format =                 {
+                };
+                groupName = "";
+                healthDataKey = "";
+                key = eyescarring2;
+                options =                 (
+                );
+                repeatable = 0;
+                repeatableText = "";
+                resultType = boolean;
+                skippable = 1;
+                steps =                 (
+                );
+                text = "";
+                title = "Did your doctor say that you had scarring or signs of inflammation in the past?";
+                type = question;
+            }
+        );
+        type = questionnaire;
+    };
+    message = SUCCESS;
 }
